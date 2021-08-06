@@ -5,11 +5,12 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import ShopCart from "./components/Shop-cart";
 import Items from "./components/Items";
+import "./Style/App.css";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<div className='App'>
+			<div className='flex-r'>
 				<Nav />
 			</div>
 			<Switch>
