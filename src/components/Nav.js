@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
 	return (
-		<ul id='Nav'>
+		<ul id='nav'>
 			<Link to='/'>
 				<div id='logo' className='flex-r pd-5px mrg-5px'></div>
 			</Link>
