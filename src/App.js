@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import ShopCart from "./components/Shop-cart";
+import Items from "./components/Items";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 				<Route exact path='/' component={Home} />
 				<Route exact path='/shop' component={Shop} />
 				<Route exact path='/shop-cart' component={ShopCart} />
+				<Route exact path='/:id' component={Items} />
 			</Switch>
 		</BrowserRouter>
 	);
