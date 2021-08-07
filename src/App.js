@@ -10,9 +10,7 @@ import "./Style/App.css";
 function App() {
 	return (
 		<BrowserRouter>
-			<div className='flex-r'>
-				<Nav />
-			</div>
+			<Nav />
 			<Switch>
 				<Route exact path='/' component={Home} />
 				<Route exact path='/shop' component={Shop} />
