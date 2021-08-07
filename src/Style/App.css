@@ -3,6 +3,23 @@ a {
 	text-decoration: none;
 	color: #000;
 }
+button {
+	border: none;
+	font-weight: bold;
+	padding: 0;
+	cursor: pointer;
+}
+img {
+	height: 100%;
+	width: 100%;
+}
+#root {
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	height: 100%;
+	width: 100%;
+}
+/*nav bar --------------------------------------------------------*/
 nav {
 	height: 60px;
 	width: 100%;
@@ -11,6 +28,7 @@ h1 {
 	border: 1px dashed white;
 }
 #logo {
+	height: 100%;
 	background-color: black;
 	color: white;
 	justify-content: center;
@@ -31,10 +49,72 @@ h1 {
 	width: 100%;
 	justify-content: space-around;
 }
+
+/*Home page---------------------------------------------------*/
+#home {
+	opacity: 80%;
+	justify-content: center;
+	background-size: cover;
+	background-image: url(../assets/home-bkg.jpg);
+}
+#homeContainer {
+	justify-content: space-around;
+	width: 90%;
+	height: 90%;
+}
+#homeInfo {
+	justify-content: space-evenly;
+	font-weight: bold;
+	font-size: x-large;
+	font-style: italic;
+	color: white;
+	width: 40%;
+	height: 90%;
+}
+#top-products {
+	justify-content: space-evenly;
+	width: 50%;
+	height: 90%;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.image-slider {
+	height: 60%;
+	width: 60%;
+}
+.image-bullets {
+	width: 60%;
+	justify-content: space-evenly;
+}
+.fa-circle {
+	font-size: larger;
+	cursor: pointer;
+}
+.fa-circle:hover {
+	border-radius: 50%;
+	box-shadow: rgb(0 0 0 / 85%) 0px 0px 6px 4px;
+}
+.fa-circle.on {
+	font-weight: bold;
+}
+p {
+	text-align: center;
+}
+.logo {
+	background-color: black;
+	color: white;
+	justify-content: center;
+	font-style: normal;
+}
+/*standard ------------------------------------------------------------*/
 .flex-r {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
+}
+.flex-c {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .pd-5px {
 	padding: 5px;
@@ -48,8 +128,8 @@ h1 {
 .mrg-10px {
 	margin: 10px;
 }
-.mg-right-5 {
-	margin-right: 5%;
+.mg-right-5px {
+	margin-right: 5px;
 }
 .s-between {
 	justify-content: space-between;
