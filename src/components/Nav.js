@@ -24,10 +24,14 @@ function Nav() {
 
 			<ul id='right-nav' className='flex-r pd-5px'>
 				<Link to='/shop-cart'>
-					<li>Cart</li>
+					<li>
+						<i class='fas fa-shopping-cart'></i>
+					</li>
 				</Link>
 				<Link to='/'>
-					<li>My Account</li>
+					<li>
+						<i class='fas fa-user-circle'></i>
+					</li>
 				</Link>
 			</ul>
 		</nav>
