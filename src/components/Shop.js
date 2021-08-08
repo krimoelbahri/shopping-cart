@@ -1,7 +1,11 @@
+import { MainProducts } from "./Shop-components/Main-products";
+import { SideBar } from "./Shop-components/Side-bar";
+
 function Shop() {
 	return (
-		<div id='shop'>
-			<h1>Shop</h1>
+		<div id='shop' className='flex-r'>
+			<SideBar />
+			<MainProducts />
 		</div>
 	);
 }
