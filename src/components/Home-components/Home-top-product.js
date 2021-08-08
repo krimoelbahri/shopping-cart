@@ -5,7 +5,7 @@ function TopProducts() {
 	const [topImage, setTopImage] = useState(TopImages[index]);
 	const [isActive, setIsActive] = useState(index);
 
-	const changeImg = async (e) => {
+	const changeImg = (e) => {
 		if (e) {
 			setIndex(Number(e.target.id));
 			setIsActive(Number(e.target.id));
