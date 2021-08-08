@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
 	return (
 		<nav id='nav' className='flex-r s-between'>
 			<div id='left-nav' className='flex-r'>
@@ -16,13 +16,13 @@ function Nav() {
 					<Link to='/shop'>
 						<li>Shop</li>
 					</Link>
-					<Link to='/contact'>
-						<li>Contact</li>
-					</Link>
 				</ul>
 			</div>
 
 			<ul id='right-nav' className='flex-r pd-5px'>
+				<li>
+					<p className='cart-items-number'>{props.itemsNumber}</p>
+				</li>
 				<Link to='/shop-cart'>
 					<li>
 						<i className='fas fa-shopping-cart'></i>
