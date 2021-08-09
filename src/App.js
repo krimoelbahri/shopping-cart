@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -12,7 +12,7 @@ function App() {
 
 	const checkItemExist = (item) => {
 		for (let i = 0; i < cartItems.length; i++) {
-			if (cartItems[i].url === item) {
+			if (cartItems[i].url === item.url) {
 				return true;
 			}
 		}
@@ -23,7 +23,7 @@ function App() {
 		if (checkItemExist(item)) {
 			setCartItems((arr) => {
 				return arr.map((obj) => {
-					if (obj.url === item) {
+					if (obj.url === item.url) {
 						obj = {
 							...obj,
 							quantity: obj.quantity + quantity,
@@ -35,15 +35,20 @@ function App() {
 			return;
 		}
 		let obj = {
-			url: item,
+			...item,
 			quantity,
 		};
 		setCartItems([...cartItems, obj]);
 	};
+	const deleteProduct = (e) => {
+		let index = Number(e.target.id);
+		setCartItems((arr) => {
+			return arr.filter((a) => {
+				return a !== arr[index];
+			});
+		});
+	};
 
-	useEffect(() => {
-		console.log(cartItems);
-	}, [cartItems]);
 	return (
 		<BrowserRouter>
 			<Nav itemsNumber={cartItems.length} />
@@ -55,7 +60,7 @@ function App() {
 					<Shop handleCartItems={handleCartItems} />
 				</Route>
 				<Route exact path='/shop-cart'>
-					<ShopCart cartItems={cartItems} />
+					<ShopCart deleteProduct={deleteProduct} cartItems={cartItems} />
 				</Route>
 				<Route exact path='/shop/:id' component={Items} />
 			</Switch>
