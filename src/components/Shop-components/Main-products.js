@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { TopImages } from "../data/Top-images";
+import { AllProducts } from "../data/Products";
 
 function MainProducts(props) {
 	const [productsArray, setProductsArray] = useState([]);
@@ -10,9 +10,9 @@ function MainProducts(props) {
 			e.target.parentNode.previousSibling.childNodes[1].value
 		);
 		if (val !== 0) {
-			let item = TopImages[e.target.id];
+			let item = AllProducts[e.target.id];
 			props.handleCartItems(val, item);
-			e.target.parentNode.previousSibling.childNodes[1].value = 0;
+			e.target.parentNode.previousSibling.childNodes[1].value = 1;
 		}
 	};
 
@@ -21,37 +21,42 @@ function MainProducts(props) {
 	};
 	const handleMinus = (e) => {
 		let val = e.target.nextSibling.value;
-		if (val !== "0") {
+		if (val !== "1") {
 			e.target.nextSibling.value--;
 		}
 	};
 	const handleBlur = (e) => {
 		if (!e.target.value) {
-			e.target.value = 0;
+			e.target.value = 1;
 		}
 	};
 
 	useEffect(() => {
-		setProductsArray(TopImages);
+		setProductsArray(AllProducts);
 	}, []);
 
 	return (
 		<div id='mainProducts' className='flex-r'>
 			{productsArray.map((product, i) => {
 				return (
-					<div key={i} className='shop-product-container flex-c'>
+					<div key={product.id} className='shop-product-container flex-c'>
 						<div className='image-container'>
-							<img src={product} alt='Product' />
+							<img src={product.url} alt='Product' />
 						</div>
-						<div className='product-name'>Product{i}</div>
-						<div className='product-price'>Price: {i}$</div>
+						<div className='product-name'>{product.title}</div>
+						<div className='product-price'>Price: {product.price}$</div>
 						<div className='quantity flex-r'>
 							<i onClick={handleMinus} className='fas fa-minus'></i>
-							<input onBlur={handleBlur} type='number' defaultValue={0} />
+							<input
+								className='quantity-input'
+								onBlur={handleBlur}
+								type='number'
+								defaultValue={1}
+							/>
 							<i onClick={handlePlus} className='fas fa-plus'></i>
 						</div>
 						<div className='product-button-div flex-r'>
-							<Link to={`/shop/${i}`}>
+							<Link to={`/shop/${product.id}`}>
 								<button className='product-button'>Details</button>
 							</Link>
 							<button
