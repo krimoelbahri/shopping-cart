@@ -1,7 +1,7 @@
 {
   "name": "shopping-cart",
   "version": "0.1.0",
-  "homepage": "http://krimoelbahri.github.io/shopping-cart",
+  "homepage": "http://krimoelbahri.github.io/shopping-cart/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
