@@ -53,7 +53,7 @@ function App() {
 		<BrowserRouter>
 			<Nav itemsNumber={cartItems.length} />
 			<Switch>
-				<Route exact path='/'>
+				<Route exact path='/shopping-cart'>
 					<Home />
 				</Route>
 				<Route exact path='/shop'>

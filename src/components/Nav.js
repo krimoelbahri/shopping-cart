@@ -4,13 +4,13 @@ function Nav(props) {
 	return (
 		<nav id='nav' className='flex-r s-between'>
 			<div id='left-nav' className='flex-r'>
-				<Link id='logo-link' to='/'>
+				<Link id='logo-link' to='/shopping-cart'>
 					<div id='logo' className='flex-r'>
 						<h1 className='pd-10px mrg-10px'>ELBAHRI</h1>
 					</div>
 				</Link>
 				<ul className='list flex-r pd-5px mrg-5px'>
-					<Link to='/'>
+					<Link to='/shopping-cart'>
 						<li>Home</li>
 					</Link>
 					<Link to='/shop'>
@@ -28,7 +28,7 @@ function Nav(props) {
 						<i className='fas fa-shopping-cart'></i>
 					</li>
 				</Link>
-				<Link to='/'>
+				<Link to='/shopping-cart'>
 					<li>
 						<i className='fas fa-user-circle'></i>
 					</li>
