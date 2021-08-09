@@ -6,7 +6,10 @@ function ShopCart(props) {
 	return (
 		<div id='shopCart' className='flex-r'>
 			<div id='shopCartContainer' className='flex-r'>
-				<CartItems cartItems={props.cartItems} />
+				<CartItems
+					deleteProduct={props.deleteProduct}
+					cartItems={props.cartItems}
+				/>
 				<Address />
 				<CreditCard />
 			</div>
