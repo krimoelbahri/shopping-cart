@@ -13,12 +13,7 @@ img {
 	height: 100%;
 	width: 100%;
 }
-#root {
-	display: grid;
-	grid-template-rows: 60px 1fr;
-	height: 100%;
-	width: 100%;
-}
+
 /*nav bar --------------------------------------------------------*/
 nav {
 	height: 60px;
